@@ -1,0 +1,194 @@
+---
+import SectionTitle from "../layouts/SectionTitle.astro";
+import PortfolioNav from "../layouts/PortfolioNav.astro";
+import VideoScript from "../layouts/VideoScript.astro";
+import Video from "../layouts/Video.astro";
+import Image from "../layouts/Image.astro";
+import Footer from "../layouts/Footer.astro";
+
+---
+
+<html lang="en">
+    <body class="inventory bg-[#17212b] min-h-screen text-[#d5e1e8]">
+        <PortfolioNav />
+        <SectionTitle
+            title="Inventory System"
+            imgsrc="/portfolio/inventory.png"
+            titlecolor="text-[#67c5d8]"
+        />
+        <main class="mx-auto max-w-5xl px-6 space-y-3 mb-6">
+            <h2>Overview</h2>
+            <p>
+                I developed an interface system, inspired by the Resident Evil
+                series of games, which allows the player to sort and perform
+                actions on items they have collected. Furthermore, this system
+                introduces a weight constraint that affects the player's
+                movements.
+            </p>
+
+            <h2>Used Tools</h2>
+            <p>
+                I used Unreal Engine 6 in blueprint to create this system and
+                the Common UI plugin to design the interfaces.
+            </p>
+
+            <h2>How It Works</h2>
+            <p>
+                Items are displayed in the grid according to an image assigned
+                to them and a size based on grid squares. The larger the items,
+                the more space they take up in this grid.
+            </p>
+            <Image imgsrc="/portfolio/presentation.png" />
+            <p>
+                Each of these items contains information that can be viewed,
+                following a dedicated structure, within this inventory, such as
+                rarity and utility.
+            </p>
+            <Image imgsrc="/portfolio/infosobjets.png" />
+
+            <p>
+                The player can also perform actions on these items via a context
+                menu, such as using them, discarding a single item or the entire
+                stack of items from the inventory.
+            </p>
+            <Image imgsrc="/portfolio/actions.png" />
+            <p>
+                To increase the available space, the player can interact with
+                bags found in the environment to gain extra space by placing
+                them around the existing inventory.
+            </p>
+            <Video videosrc="/portfolio/addspace.mp4" />
+            <p>
+                Each item has a weight that affects the maximum weight the
+                player can carry. When a weight threshold is reached, the
+                player's speed will decrease.
+            </p>
+            <Video videosrc="/portfolio/weight.mp4" />
+
+            <h2>Links</h2>
+            <p>
+                <span class="bold">Project repository</span>: <a
+                    href="https://drive.google.com/file/d/12dPcvhTwP5UI-ABs5rqb8YJtVe_nktw6/view?usp=sharing"
+                    >https://drive.google.com/file/d/12dPcvhTwP5UI-ABs5rqb8YJtVe_nktw6/view?usp=sharing</a
+                >
+            </p>
+            <h2>Inspirations</h2>
+            <p>Capcom. (2005). Resident Evil 4 [Video game]. Capcom.</p>
+            <h2>Credits & Resources</h2>
+            <h3>Resources Used</h3>
+            <p>
+                Ryan Laley. (2023). How to create an inventory system in Unreal
+                Engine 5. YouTube. Accessed on 3 January at <a
+                    href="https://www.youtube.com/playlist?list=PL4G2bSPE_8umjCYXbq0v5IoV-Wi_WAxC3"
+                    >https://www.youtube.com/playlist?list=PL4G2bSPE_8umjCYXbq0v5IoV-Wi_WAxC3</a>
+            </p>
+            
+            <p>
+                Patsanoob. (2023). Multi-slot inventory (Resident Evil) | UE5
+                tutorial. YouTube. Accessed on 3 January at <a
+                    href="https://youtu.be/sFGl-WNpGZM?si=xGZBAzcBVjIfXNls"
+                    >https://youtu.be/sFGl-WNpGZM?si=xGZBAzcBVjIfXNls</a>
+            </p>
+            <h3>Assets</h3>
+            <p>
+                Michael V. (2023). 15th-Century Long Sword. Sketchfab. Accessed
+                2 December at<br />
+                <a
+                    href="https://sketchfab.com/3d-models/15th-century-long-sworda160126f11574b0a85bb8e4ba0b07a2f"
+                    >https://sketchfab.com/3d-models/15th-century-long-sworda160126f11574b0a85bb8e4ba0b07a2f</a
+                ><br />
+            </p>
+            <p>
+                plazma019. (2023). Axe. Sketchfab. Accessed 2 December at<br />
+                <a
+                    href="https://sketchfab.com/3d-models/axe-ea0b6f15e25842408e7b2330b8c18d78"
+                    >https://sketchfab.com/3d-models/axe-ea0b6f15e25842408e7b2330b8c18d78</a
+                ><br />
+            </p>
+            <p>
+                Sereda. (2020). Stylised stones props. Sketchfab. Accessed 2
+                December at<br />
+                <a
+                    href="https://sketchfab.com/3d-models/stylized-stones-props5aacb1ff1dae459c9a3afb5098f7a571"
+                    >https://sketchfab.com/3d-models/stylized-stones-props5aacb1ff1dae459c9a3afb5098f7a571</a
+                ><br />
+            </p>
+            <p>
+                Penrolz. (2023). Lightning-powered bow model (low-poly).
+                Sketchfab. Accessed on 2<br />
+                December at <a
+                    href="https://sketchfab.com/3d-models/lightning-powered-bow-model-lowpoly-3821c85a21194cb984d82c933b1ec05e"
+                    >https://sketchfab.com/3d-models/lightning-powered-bow-model-lowpoly-3821c85a21194cb984d82c933b1ec05e</a
+                ><br />
+            </p>
+            <p>
+                matousekfoto. (2022). Stack of cut ash tree logs. Sketchfab.
+                Accessed 2 December at<br />
+                <a
+                    href="https://sketchfab.com/3d-models/cut-ashtree-logs-stack08993545b0574a5687c702751f7d7b18"
+                    >https://sketchfab.com/3d-models/cut-ashtree-logs-stack08993545b0574a5687c702751f7d7b18</a
+                ><br />
+            </p>
+            <p>
+                shuvalov.di. (2021). Small bottle. Sketchfab. Accessed 2
+                December at<br />
+                <a
+                    href="https://sketchfab.com/3d-models/small-bottle-761e522abb934b0a98063a985172818"
+                    >https://sketchfab.com/3d-models/small-bottle-761e522abb934b0a98063a985172818</a
+                >
+                <br />
+            </p>
+
+            <p>
+                BarnusModels. (2024). Future first aid kit. Sketchfab. Accessed
+                2 December at<br />
+                <a
+                    href="https://sketchfab.com/3d-models/future-first-aid-kit178024fbe4824cc483b9347e74c3c692"
+                    >https://sketchfab.com/3d-models/future-first-aid-kit178024fbe4824cc483b9347e74c3c692</a
+                ><br />
+            </p>
+            <p>
+                RiZoRuS77. (2023). Metal_Bar. Sketchfab. Accessed 2 December at<br
+                />
+                <a
+                    href="https://sketchfab.com/3d-models/metal-bar-f4b15a333ccd4e5d9f98eab612a94009"
+                    >https://sketchfab.com/3d-models/metal-bar-f4b15a333ccd4e5d9f98eab612a94009</a
+                ><br />
+            </p>
+            <p>
+                N.D. (2024). Red Apple. Fab. Accessed 2 December at<br />
+                <a
+                    href="https://www.fab.com/listings/c40aab2b-3767-4055-94bf-4283022516f9"
+                    >https://www.fab.com/listings/c40aab2b-3767-4055-94bf-4283022516f9</a
+                >
+            </p>
+            <p>
+                Trident.AI. (2024). Stylised bag. Sketchfab. Accessed 25 June at<br
+                />
+                <a
+                    href="https://sketchfab.com/3d-models/stylized-bag-09efea26a5c444a7ac6a67c08d1c5d9b"
+                    >https://sketchfab.com/3d-models/stylized-bag-09efea26a5c444a7ac6a67c08d1c5d9b</a
+                ><br />
+            </p>
+            <p>
+                Assetfactory. (2023). Airport Travel Bag. Sketchfab. Accessed 25
+                June at<br />
+                <a
+                    href="https://sketchfab.com/3d-models/airport-travel-bag4f523c7383564b3c8fbdd3c3ea6ac2c8"
+                    >https://sketchfab.com/3d-models/airport-travel-bag4f523c7383564b3c8fbdd3c3ea6ac2c8</a
+                ><br />
+            </p>
+            <p>
+                Fakumen. (2020). Japanese school backpack. Sketchfab. Retrieved
+                25 June from<br />
+                <a
+                    href="https://sketchfab.com/3d-models/japanese-school-backpack32d5b9d4db3f41d8a0f9b7380e8ef2cc"
+                    >https://sketchfab.com/3d-models/japanese-school-backpack32d5b9d4db3f41d8a0f9b7380e8ef2cc</a
+                >
+            </p>
+        </main>
+        <Footer></Footer>
+    </body>
+    <VideoScript />
+</html>
+

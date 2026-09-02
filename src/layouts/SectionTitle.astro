@@ -1,0 +1,33 @@
+---
+const {title,imgsrc,titlecolor} = Astro.props
+import "../assets/app.css";
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+		<link rel="icon" href="/portfolio/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<section class="relative h-[400px] overflow-hidden mb-6">
+
+			<img
+            src={imgsrc}
+            class="absolute inset-0 h-full w-full object-cover"
+        />
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent">
+        </div>
+			<div class="relative flex h-full items-end justify-center pb-10">
+				<h1 class={titlecolor}>{title}</h1>
+			</div>
+
+		</section>
+		
+	</body>
+</html>

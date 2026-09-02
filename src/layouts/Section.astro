@@ -1,0 +1,48 @@
+---
+const { title, tags, link, img_link } = Astro.props;
+import "../assets/app.css";
+function getBadgeStyle(index) {
+    if (index == 0) {
+        return "p-2 badge badge-primary";
+    } else if (index == 1) {
+        return "p-2 badge badge-secondary";
+    } else {
+        return "p-2 badge badge-accent";
+    }
+}
+---
+
+<html>
+    <body>
+        <div class="card card-lg relative pt-3 overflow-hidden
+            transition-transform duration-300
+            hover:scale-95">
+            <a href={link}>
+                <figure class="rounded-box">
+                    <img src={img_link}  class="w-full object-cover "/>
+                </figure>
+
+                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent">
+                </div>  
+
+                <div class="card-body absolute bottom-0">
+                    <h2 class="card-title text-3xl text-white">
+                        {title}
+
+                        <div class="tags flex flex-wrap gap-2">
+                            {
+                                tags.map((tag, index) => (
+                                    <span class={getBadgeStyle(index)}>
+                                        {tag}{" "}
+                                    </span>
+                                ))
+                            }
+                        </div>
+                    </h2>
+                </div>
+            </a>
+        </div>
+
+        <slot />
+    </body>
+</html>

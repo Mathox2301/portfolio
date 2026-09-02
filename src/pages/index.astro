@@ -1,0 +1,76 @@
+---
+import Section from "../layouts/Section.astro";
+import Footer from "../layouts/Footer.astro"
+import PortfolioNav from "../layouts/PortfolioNav.astro";
+import "../assets/app.css";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+		<link rel="icon" href="/portfolio/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Portfolio</title>
+	</head>
+	<body class="bg-[#9fdcf8] min-h-screen text-black">
+		<PortfolioNav />
+		<div class="py-5">
+			<div class="flex justify-center avatar">
+				<div class="w-24 rounded">
+					<img src="/portfolio/pfp.jpg" />
+				</div>
+			</div>
+			<h1 class="text-center text-6xl font-bold">Lejeune Mathéo</h1>
+			<h3 class="text-center text-3xl font-bold">Game Programmer</h3>
+			<div class="flex justify-center pt-3 gap-2">
+				<a href="https://www.linkedin.com/in/mathéo-lejeune-041138409/">
+					<img
+						src="/portfolio/linkedin_ico.png"
+						alt="linkedin account of Lejeune Mathéo"
+						height="48"
+						width="48"
+					/>
+				</a>
+
+				<a href="mailto:lejeunematheo@outlook.com">
+					<img
+						src="/portfolio/mail_ico.png"
+						alt="email address of Lejeune Mathéo"
+						height="48"
+						width="48"
+					/>
+				</a>
+			</div>
+		</div>
+		<main class="mx-auto max-w-5xl px-6">
+		<Section
+			title="Euphonia"
+			tags={["Gameplay Programming", "UI Programming", "Puzzle Design"]}
+			link="/portfolio/euphonia"
+			img_link="/portfolio/euphonia.jpg"
+		/>
+		<Section
+			title="Hints System"
+			tags={["System Programming", "Accessibility", "Puzzle Design"]}
+			link="/portfolio/hints"
+			img_link="/portfolio/hintsystem.png"
+		/>
+		<Section
+			title="Inventory System"
+			tags={["UI Programming", "System Programming", "Accessibility"]}
+			link="/portfolio/inventory"
+			img_link="/portfolio/inventory.png"
+		/>
+		<Section
+			title="TPS Gamefeel"
+			tags={["Gameplay Programming", "VFX", "Gamefeel"]}
+			link="/portfolio/gamefeel"
+			img_link="/portfolio/gamefeel.png"
+		/>
+
+		</main>
+		<Footer></Footer>
+	</body>
+</html>

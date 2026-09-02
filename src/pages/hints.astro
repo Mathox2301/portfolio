@@ -1,0 +1,158 @@
+---
+import SectionTitle from "../layouts/SectionTitle.astro";
+import PortfolioNav from "../layouts/PortfolioNav.astro";
+import VideoScript from "../layouts/VideoScript.astro";
+import Video from "../layouts/Video.astro";
+import Image from "../layouts/Image.astro";
+import Footer from "../layouts/Footer.astro"
+
+---
+
+<html lang="en">
+    <body class="hint bg-[#F2E8D5] min-h-screen text-[#302C32]">
+        <PortfolioNav />
+        <SectionTitle
+            title="Hint System"
+            imgsrc="/portfolio/hintsystem.png"
+            titlecolor="text-[#7A1F3D]"
+        />
+        <main class="mx-auto max-w-5xl px-6 space-y-3 mb-6">
+            <h2>Overview</h2>
+            <p>
+                I developed a clue system for puzzle/mystery games, implemented
+                in a test scene based on the tutorial for the board game series
+                Unlock! (Demaegd, C., 2017) to demonstrate my ability, as a
+                systems programmer, to produce a feature that can be easily
+                reused in other projects of this game genre. This system aim to
+                adapt assistance to player preferences.
+            </p>
+            <p>
+                This development is based on accessibility (tailoring help to
+                players' needs), reusability (being able to integrate this
+                system easily into any puzzle/mystery game) and
+                non-intrusiveness (guiding the player towards clues without
+                interrupting their experience).
+            </p>
+
+            <h2>Used Tools</h2>
+            <p>I used Unreal Engine 6 in blueprint to create this system.</p>
+
+            <h2>How It Works</h2>
+            <p>The system follows several steps.</p>
+            <p>First, a timer is started.</p>
+            <p>
+                Once the timer has run out, the attached transmitter searches
+                for receivers attached to the objects involved in solving the
+                puzzles.
+            </p>
+            <p>For a receiver to be valid, it must:</p>
+            <ul class="list">
+                <li>Be within a limited area around the player</li>
+                <li>
+                    Contain clues with the same progression ID as the player
+                </li>
+            </ul>
+            <p>
+                If several objects are valid, the one closest to the player is
+                selected.
+            </p>
+            <p>
+                Once the object has been identified, the transmitter instructs
+                it to play a dialogue corresponding to the current progress
+                identifier.
+            </p>
+            <p>
+                When the player completes a step in solving a puzzle, the
+                progression ID is incremented.
+            </p>
+            <h2>Accessibility</h2>
+            <p>
+                Rather than finding a one-size-fits-all solution for every type
+                of player, I decided instead to create accessibility options.
+            </p>
+            <Image imgsrc="/portfolio/accessibility.png" />
+
+            <h3>Frequency</h3>
+            <p>
+                The player can choose to increase or decrease the frequency with
+                which clues appear.
+            </p>
+            <h3>Display</h3>
+            <p>The player can also choose between three display modes:</p>
+            <ul class="list">
+                <li>
+                    No hints: The player will receive no hint notifications.
+                </li>
+                <li>
+                    Legacy Mode: The player will receive a hint every time the
+                    timer runs out.
+                    <Video videosrc="/portfolio/legacymode.mp4" />
+                </li>
+                <li>
+                    Dynamic Mode: The player will receive a notification every
+                    time the timer runs out and can decide whether to
+                    display the hint.
+                    <Video videosrc="/portfolio/dynamicmode.mp4" />
+                </li>
+            </ul>
+            <h2>Links</h2>
+            <p>
+                <span class="bold">Project repository</span>: <a
+                    href="https://drive.google.com/file/d/1px251h8yfgN-Uq6tA-qv9JQ9zmdAaQyl/view?usp=sharing"
+                    >https://drive.google.com/file/d/1px251h8yfgN-Uq6tA-qv9JQ9zmdAaQyl/view?usp=sharing</a
+                >
+            </p>
+            <h2>Inspirations</h2>
+            <p>Demaegd, C. (2017). Unlock ! [Board Game]. Space Cowboys.</p>
+            <h2>Credits & Resources</h2>
+            <h3>Assets</h3>
+            <p>
+                Exo. (2026). Numeric Keypad / Security Pin Pad. Sketchfab.
+                Accessed 7 July at <a
+                    href=" https://sketchfab.com/3d-models/numeric-keypad-security-pin-padeebb647f4bcd4c9780dcc16f542c0264"
+                >
+                    https://sketchfab.com/3d-models/numeric-keypad-security-pin-padeebb647f4bcd4c9780dcc16f542c0264</a
+                >
+            </p>
+
+            <p>
+                MR. A K. (2024). Realistic door. SketchFab. Accessed 7 July at <a
+                    href="https://sketchfab.com/3d-models/realistic-door-ec835c0c500c487a93f9fcd47535a554"
+                    >https://sketchfab.com/3d-models/realistic-door-ec835c0c500c487a93f9fcd47535a554
+                </a>
+            </p>
+
+            <p>
+                Spooneystone. (2021). KEY. Sketchfab. Accessed 7 July at <a
+                    href="https://sketchfab.com/3d-models/key-aeb6b20f890a4ea68b9720c213995984"
+                >
+                    https://sketchfab.com/3d-models/key-aeb6b20f890a4ea68b9720c213995984</a
+                >
+            </p>
+
+            <p>
+                UHO Development. (2017). Chest. Sketchfab. Accessed 7 July at <a
+                    href="https://sketchfab.com/3d-models/chest-35be28efe99a43c5b76cd8fed3f5c89a"
+                >
+                    https://sketchfab.com/3d-models/chest-35be28efe99a43c5b76cd8fed3f5c89a</a
+                >
+            </p>
+            <p>
+                Jerovdl. (2017). LED TV. Sketchfab. Accessed 7 July at <a
+                    href="https://sketchfab.com/3dmodels/led-tv-7adf0449187e4269aadea0b615b247fa"
+                >
+                    https://sketchfab.com/3dmodels/led-tv-7adf0449187e4269aadea0b615b247fa</a
+                >
+            </p>
+
+            <p>
+                Naira. (2022). Simple alphabet. Sketchfab. Accessed 7 July at <a
+                    href="https://sketchfab.com/3d-models/simple-alphabet86bc96d947054d9398402069c02f96fc"
+                >
+                https://sketchfab.com/3d-models/simple-alphabet86bc96d947054d9398402069c02f96fc</a>
+            </p>
+        </main>
+        <Footer></Footer>
+    </body>
+    <VideoScript />
+</html>

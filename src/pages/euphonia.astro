@@ -1,0 +1,279 @@
+---
+import SectionTitle from "../layouts/SectionTitle.astro";
+import PortfolioNav from "../layouts/PortfolioNav.astro";
+import VideoScript from "../layouts/VideoScript.astro";
+import Video from "../layouts/Video.astro";
+import Image from "../layouts/Image.astro";
+import Footer from "../layouts/Footer.astro";
+
+
+---
+
+<html lang="en">
+    <body class="euphonia bg-[#f0f4cf] min-h-screen text-[#777154]">
+        <PortfolioNav />
+        <SectionTitle
+            title="Euphonia : De Son Et De Soleil"
+            imgsrc="/portfolio/euphonia.jpg"
+            titlecolor="text-[#6ead58]"
+        />
+        <main class="mx-auto max-w-5xl px-6 space-y-3 mb-6">
+            <h2>
+                Overview
+            </h2>
+            <p>
+                As part of my final year work, <a href="https://www.instagram.com/wildthorns_studio/#" class="bold">WildThorns Studios</a> (
+                <a href="https://linktr.ee/dorian.laniesse">Laniesse Dorian</a>, <a  href="https://linktr.ee/LiliLebrun">Lebrun Lili</a>, <a  href="https://linktr.ee/robby.schneider">Schneider Robby</a>, <a href="https://linktr.ee/mariusbjx">Bajeux Marius</a>, <a href="https://linktr.ee/gollasmatheo">Gollas Mathéo</a>, <a href="https://linktr.ee/AntoineCalifice">Califice Antoine</a> and I) created the game <span
+                    class="bold">Euphonia</span>. 
+                This is a narrative game of exploration and puzzle solving
+                where our main character, accompanied by a small robot,
+                discovers the village of these ancestors and tries to understand
+                past events. 
+            </p>
+            <p>
+                In this project, I handled the development of the mechanics and interactions, as well as the UI used for the various puzzles.
+            </p>
+            <h2>Used Tools</h2>
+            <p>
+                I mainly used Unreal Engine 5 in blueprint to
+                create the mechanics and UMG for the UIs.
+            </p>
+            <h2>Gameplay Systems</h2>
+            <h3>Riddles</h3>
+            <p>
+                For this task, I created a modular UI in order to be able to
+                change the type of puzzles and solutions more easily.
+            </p>
+            <p>
+                At first, I started with a UI by puzzle because each one had
+                specific needs, but given the number of interfaces that can be
+                used in the game, I started with a UI capable of adapting to
+                specific needs. (type of puzzles, solution, symbols/words usable
+                for this puzzle, dial already completed or inaccessible).
+            </p>
+            <p>
+                In terms of inspiration, since we work with a register of 8
+                symbols, I was inspired by the radial menus of weapon selections
+                like the one in GTA 5.
+            </p>
+
+            <p>
+                One obstacle I may have encountered was the use of the mouse,
+                which did not select the same angle depending on the window
+                sizes.
+            </p>
+            <h4>Riddle: Symbols Association</h4>
+            <p>
+                This puzzle is based on the observation of the environmental
+                elements of the game and allows the player to complete an
+                interface with symbols. Once successful, the system allows the
+                player to move forward in his adventure.
+            </p>
+            <Image imgsrc="/portfolio/Pasted image 20260506145452.png"></Image>
+            <h4>Riddle : Charade</h4>
+            <p>
+                This puzzle serves only as a reference for the player to enter a
+                code on the handpan interface.
+            </p>
+                        <Image imgsrc="/portfolio/Pasted image 20260506145602.png"></Image>
+
+            <h4>Riddle: Words Collection And Association</h4>
+            <p>
+                This puzzle works as the first type except that symbols are
+                replaced by words. To find these words, the player must read the
+                different panels of the area in order to locate and collect the
+                important words for the resolution of the puzzle.
+            </p>
+            <p>
+                It results from the first version of the mechanics of language
+                comprehension, but since it is too complex on a large scale, it
+                has been reduced to match a smaller scope that is accessible to
+                the player.
+            </p>
+            <Video videosrc="/portfolio/Enigme_mots.mp4" />
+
+            <h3>Light Reflection</h3>
+            <p>
+                For this task, I created a system that allows Lao (the robot
+                companion) to reflect light in a cone in front of him.
+            </p>
+            <p>
+                The obstacles I encountered were finding how to make a visual
+                cone and producing a network of raycasts corresponding to the
+                diameter of the cone.
+            </p>
+            <p>So I carried out several checks to detect eligible targets:</p>
+            <ul class="list">
+                <li>
+                    A scalar product lets you know if the actor is in the
+                    playable character's angle of view. If nothing more is done,
+                    the actors hidden behind become eligible as well.
+                </li>
+                <li>
+                    If at least one actor is detected, a network of raycasts is
+                    launched where each of them stops at the first actor
+                    encountered to avoid touching actors not directly
+                    accessible. Each raycast only detects objects belonging to
+                    the enum values of EObjectTYpeQuery WorldStatic,
+                    WorldDynamic, and Pawn in order to avoid blocking by
+                    "traversable" objects (godrays)
+                </li>
+            </ul>
+            <Video videosrc="/portfolio/2026-05-06 14-13-01 - Trim.mp4" />
+
+            <h3>Handpan</h3>
+
+            <p>
+                For this task, I created with <a href="https://linktr.ee/gollasmatheo">Mathéo Gollas</a> a UI allowing playing combinations of symbols and changing the solutions more
+                easily. Feedback that is provided to the player when they enter
+                a bad or correct code.
+            </p>
+
+            <p>
+                For the validation of a response, each object that can be
+                activated by the handpan is notified. If the index of the zone
+                or the handpan is played and matches the index of the object, then
+                it checks whether the code play matches its own and activates
+                accordingly.
+            </p>
+
+            <p>
+                The obstacle I encountered is related to code validation.
+                Initially, the player was allowed to validate his hypothesis at
+                the center, but this way was less understood by the players. So
+                we switched to a version that automatically validates the code
+            </p>
+
+            <p>Scrapped version:</p>
+            <Video videosrc="/portfolio/handpan_scrapped.mp4" />
+
+            <p>Final version:</p>
+            <Video videosrc="/portfolio/handpan.mp4" />
+
+            <h3>Symbols Menu</h3>
+
+            <p>
+                For this task, I created a UI that is completed as the player
+                progresses through the puzzles in order to keep track of what
+                they have already accomplished. The interface fills itself with
+                each puzzle resolution.
+            </p>
+
+            <p>
+                A first version consisted of a hypothesis log where the player
+                selected a pair of symbols and linked them with words found in
+                the environment. This version was of little use, so we preferred
+                to create a journal that contains all the discoveries we make by
+                fire and by measurements of puzzle solving.
+            </p>
+
+            <p>Scrapped version:</p>
+            <Video videosrc="/portfolio/scrapped_SymbolUI.mp4" />
+
+            <p>Final version:</p>
+            <Video videosrc="/portfolio/carnetremplissage.mp4" />
+
+            <h3>Object Reactions To Player Actions</h3>
+
+            <p>
+                For this task, we created with <a href="https://linktr.ee/gollasmatheo">Mathéo Gollas</a> different
+                interfaces reacting to the player's actions. We made this choice
+                following the number of objects with which we had to interact, 
+                and having common systems for each similar object makes the task
+                easier. Each object uses the functions of the interfaces in
+                order to introduce their operation.
+            </p>
+            <p>The types of objects created are:</p>
+
+            <ul class="list">
+                <li>
+                    <span class="bold">Interactible</span> objects: objects that
+                    provide an action when the player interacts with them via a button.
+                    <Video videosrc="/portfolio/Interactible.mp4" />
+                </li>
+                <li>
+                    <span class="bold">Light Receiver</span> objects: objects
+                    that react to rays of light in the environment and those reflected
+                    by the player.
+                    <Video videosrc="/portfolio/light receiver.mp4" />
+                </li>
+                <li>
+                    <span class="bold">Powerable</span> objects: objects that
+                    perform an action when another object asks them for it following
+                    a player's action.
+                    <Video videosrc="/portfolio/Powerable.mp4" />
+                </li>
+            </ul>
+            <h3>Zipline/Cable Car</h3>
+            <p>
+                For this task, we created with <a href="https://linktr.ee/gollasmatheo">Mathéo Gollas</a> a system allowing
+                the player to travel from one point to another using cable car
+                cabins. These systems can either be powered directly or must be
+                powered by the player's actions.
+            </p>
+            <p>
+                At the start of the game, a cable is pulled between the 2 points
+                given in the cable settings, and these two points are set as
+                departure and arrival when the player enters a cabin.
+            </p>
+            <p>
+                While the player crosses with one gondola, another takes the
+                opposite route so that there is always a gondola available at
+                any station. The cabin variables swap their values at the end of
+                each ride so that the player always stops in the right place.
+            </p>
+            <p>
+                A first version was to force the player to follow the cables of
+                the zip line.
+            </p>
+
+            <p>Scrapped version:</p>
+            <Video videosrc="/portfolio/vs_tyro.mp4" />
+
+            <p>Final version:</p>
+            <Video videosrc="/portfolio/vf_tyro.mp4" />
+
+            <h3>Settings</h3>
+            <p>For this task, I created a UI to meet accessibility needs:</p>
+            <ul class="list">
+                <li>Input sensitivity</li>
+                <li>Display modification and graphic quality</li>
+                <li>
+                    Switching from one keyboard type to another (AZERTY/QWERTY)
+                </li>
+                <li>Language (French/English)</li>
+                <li>Sound volume (general, effects and music)</li>
+                <li>Reminders of the different keys</li>
+            </ul>
+            <p>
+                All these parameters are also saved in a ".sav" file that
+                contains the parameters and associates them with the game start.
+            </p>
+
+            <Image imgsrc="/portfolio/Screenshot 2026-05-08 11-18-38.png"></Image>
+            <Image imgsrc="/portfolio/Screenshot 2026-05-08 11-24-06.png"></Image>
+            <h2>Created Tool</h2>
+            <h3>Respawn System</h3>
+            <p>
+                A respawn system is in case there is a fall of the character into the
+                void; the player is placed back in the nearest area from which
+                he fell.
+            </p>
+            <p>
+                To do this, target areas are distributed over the levels, and
+                each time the player crosses one, it will reappear there when
+                the player crosses the collision area at the minimum height that
+                the player can reach.
+            </p>
+            <Video videosrc="/portfolio/respawn.mp4" />
+            <h2>
+                Links
+            </h2>
+            <p><span class="bold">Game demo</span>: <a href="https://wildthorns-studio.itch.io/euphonia">https://wildthorns-studio.itch.io/euphonia</a> </p>
+            <p ><span class="bold">Rookies page</span>: <a href="https://www.therookies.co/u/WildThornsStudio">https://www.therookies.co/u/WildThornsStudio</a> </p>
+        </main>
+        <Footer></Footer>
+        
+    </body>
+    <VideoScript/>
+</html>

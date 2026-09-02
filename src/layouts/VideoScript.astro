@@ -1,0 +1,8 @@
+<script type="module">
+  import { beginPlayVideo } from '../assets/videoautoplay.js';
+  
+  // Initialisation globale au chargement de la page
+  document.addEventListener('DOMContentLoaded', () => {
+    beginPlayVideo('.js-autoplay', 0.5);
+  });
+</script>

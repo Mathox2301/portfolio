@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+html,
+body {
+    overflow-x: hidden;
+}
+.euphonia {
+    font-family: 'DM Sans',
+
+        sans-serif;
+    font-size: large;
+}
+
+
+.inventory {
+
+    font-family: "Rajdhani", sans-serif;
+    font-size: large;
+
+}
+
+.hint {
+    font-family: "Bodoni Moda", sans-serif;
+    font-size: large;
+
+}
+
+.gamefeel {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: large;
+}
+
+
+
+
+
+
+
+
+h1 {
+    @apply text-6xl font-bold;
+}
+
+h2 {
+    @apply text-4xl font-bold;
+}
+
+h3 {
+    @apply text-3xl font-bold;
+
+}
+
+h4 {
+    @apply text-2xl font-bold;
+
+}
+
+.underline {
+    text-decoration: underline;
+
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.list {
+    @apply list-disc list-inside pl-5 space-y-2;
+}
+
+a:hover {
+    text-decoration: underline;
+}

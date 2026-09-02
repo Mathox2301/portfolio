@@ -1,0 +1,197 @@
+---
+import SectionTitle from "../layouts/SectionTitle.astro";
+import PortfolioNav from "../layouts/PortfolioNav.astro";
+import VideoScript from "../layouts/VideoScript.astro";
+import Video from "../layouts/Video.astro";
+import Image from "../layouts/Image.astro";
+import Footer from "../layouts/Footer.astro"
+
+---
+
+<html lang="en">
+    <body class="gamefeel bg-[#e7e1d8] min-h-screen text-[#292522]">
+        <PortfolioNav />
+        <SectionTitle
+            title="TPS Gamefeel"
+            imgsrc="/portfolio/gamefeel.png"
+            titlecolor="text-[#e85d32]"
+        />
+        <main class="mx-auto max-w-5xl px-6 space-y-3 mb-6">
+            <h2>Overview</h2>
+            <p>
+                I have developed a third-person shooter system that draws its
+                inspiration mainly from Fortnite, due to its accessibility and
+                visual feedback (hit markers, bullet trajectories and impact
+                effects). It also incorporates several elements from
+                Counter-Strike: Global Offensive, notably bullet spread, which
+                increases significantly during long bursts of fire or while the
+                playable character is moving.
+            </p><p>
+                The main aim of this system was to create a satisfying shooting
+                experience, allowing us to work on the different layers of
+                gamefeel to provide the player with additional information.
+            </p>
+            <h2>Used tools</h2>
+            <p>I used Unreal Engine 6 in blueprint to create the mechanics.</p>
+
+            <h2>How It Works</h2>
+            <p>The basic system allows you to:</p>
+            <ul class="list">
+                <li>Fire a weapon</li>
+                <li>Change weapons by hovering over one</li>
+                <li>Replenish your ammunition supply by hovering over a box</li>
+                <li>
+                    See the damage inflicted on enemies (white for the body and
+                    orange for the head)
+                </li>
+                <li>
+                    See the number of rounds remaining in the magazine and those
+                    in reserve
+                </li>
+            </ul>
+            <h2>Gamefeel Layers</h2>
+            <p>
+                Players can enable and disable the gamefeel options from a
+                specific menu.
+            </p>
+            <Image imgsrc="/portfolio/menu.png"/>
+
+            <h3>Gun Sound</h3>
+            <p>
+                Gives an audio indication of when a shot was fired or while the
+                weapon is being reloaded.
+            </p>
+            <Video videosrc="/portfolio/gunsound.mp4" />
+
+            <h3>Bullet Trace</h3>
+            <p>
+                Shows the visual trajectory of the shot at the moment it was
+                fired.
+            </p>
+            <Video videosrc="/portfolio/bullettrace.mp4" />
+
+            <h3>Muzzle Flash</h3>
+            <p>Reinforces the impression that a shot was fired</p>
+            <Video videosrc="/portfolio/muzzleflash.mp4" />
+
+            <h3>Bloom</h3>
+            <p>
+                Adds a sense of realism. The dispersion is visually represented
+                by the deviation of the crosshair but also by randomly
+                generated trajectories that correspond to this deviation.
+            </p>
+            <Video videosrc="/portfolio/bloom.mp4" />
+            <h3>Recoil</h3>
+            <p>
+                Adds another sense of realism. The recoil is randomly calculated
+                by adding values to horizontal and vertical look action.
+            </p>
+            <Video videosrc="/portfolio/recul.mp4" />
+            <h3>Impacts</h3>
+            <p>Adds visual feedback for the hits from the shots fired.</p>
+            <Video videosrc="/portfolio/impact.mp4" />
+
+            <h3>Impact Particles</h3>
+            <p>
+                Complements the previous option by adding particles representing
+                the impacts of the shots relative to the surface struck.
+            </p>
+            <Video videosrc="/portfolio/particles.mp4" />
+
+            <h3>Bullet Casings</h3>
+            <p>
+                Adds visual feedback when a shot is fired. Add an additional
+                sound when the casing hit the ground, if the gun sound parameter
+                is activated.
+            </p>
+            <Video videosrc="/portfolio/douilles.mp4" />
+
+            <h3>Reduce Damage Based On Distance</h3>
+            <p>
+                Adds a new layer of realism where weapons have less impact the
+                further away the target is.
+            </p>
+            <Video videosrc="/portfolio/damage.mp4" />
+            <h3>Visual Hit Markers</h3>
+            <p>
+                Add a visual feedback showing where the player's eyes are fixed,
+                which varies depending on the status of the hit.
+            </p>
+            <Video videosrc="/portfolio/visualhit.mp4" />
+
+            <h3>Audio Hit Markers</h3>
+            <p>
+                Add an audio feedback to provide a distinctive sound cue so that
+                the player can better understand the consequences of hits.
+            </p>
+            <Video videosrc="/portfolio/audiohit.mp4" />
+
+            <h3>Dead Animation</h3>
+            <p>
+                Add another visual cue so that the player can easily tell
+                when an enemy has been defeated and so that this defeat feels
+                more natural.
+            </p>
+            <Video videosrc="/portfolio/anim.mp4" />
+
+            <h2>Links</h2>
+
+            <p>
+                <span class="bold">Project repository</span>: <a
+                    href="https://drive.google.com/file/d/171lwBSpPi2a9iR7YRjEV6ypFhiCRENLy/view?usp=sharing"
+                    >https://drive.google.com/file/d/171lwBSpPi2a9iR7YRjEV6ypFhiCRENLy/view?usp=sharing</a
+                >
+            </p>
+            <h2>Inspirations</h2>
+            <p>Capcom. (2005). Resident Evil 4 [Video Game]. Capcom. Valve</p>
+            <p>
+                Corporation & Hidden Path Entertainment. (2012). Counter-Strike:
+                Global Offensive [Video Game]. Valve Corporation
+            </p>
+            <h2>Credits & Resources</h2>
+            <h3>Resources Used</h3>
+            <p>
+                Gorka Games. (2022). How to Make a Simple Aim Offset in Unreal
+                Engine 5. YouTube. Accessed 30 June at <a
+                    href="https://www.youtube.com/watch?v=jHM7JzsNyvQ&t=7s"
+                    >https://www.youtube.com/watch?v=jHM7JzsNyvQ&amp;t=7s</a>
+            </p>
+            
+            <p>
+                H2 Unreal. (2025). How to Add Muzzle Flash &amp; Dynamic Impact - Unreal Engine 5 Weapon System Tutorial. YouTube. Accessed 30
+                June at <a
+                    href="https://www.youtube.com/watch?v=aaC3rIW_mFc&t=576s"
+                    >https://www.youtube.com/watch?v=aaC3rIW_mFc&amp;t=576s</a>
+            </p>
+            <h3>Assets</h3>
+            <p>
+                FX Cat UA. (2020). Realistic Starter VFX Pack Vol 2. Fab.
+                Accessed 30 June at <a href="https://fab.com/s/b7603e0a549d"
+                    >https://fab.com/s/b7603e0a549d</a
+                >
+            </p>
+            <p>
+                Deadghost Interactive. (2018). FPS Weapon Bundle. Fab. Accessed
+                30 June at <a href="https://fab.com/s/4e9d5df313a2"
+                    >https://fab.com/s/4e9d5df313a2</a
+                >
+            </p>
+            <p>
+                Epic Games. (2014). Animation Starter Pack. Fab. Accessed 30
+                June at <a href="https://fab.com/s/5b8a9c9d3c77"
+                    >https://fab.com/s/5b8a9c9d3c77</a
+                >
+            </p>
+            <p>
+                cstys1994. (2025). Old Military Ammo Box, Crate, Scan.
+                Sketchfab. Accessed 30 June at <a
+                    href="https://sketchfab.com/3d-models/old-military-ammo-box-crate-scan6e42c388bb1a4f299ea00c509b1b69dd"
+                    >https://sketchfab.com/3d-models/old-military-ammo-box-crate-scan6e42c388bb1a4f299ea00c509b1b69dd</a
+                >
+            </p>
+        </main>
+        <Footer/>
+    </body>
+            <VideoScript />
+
+</html>

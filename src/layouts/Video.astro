@@ -1,0 +1,15 @@
+---
+const {videosrc} = Astro.props
+import "../assets/app.css";
+
+---
+<video
+    class="js-autoplay  rounded-box"
+    controls
+    autoplay
+    muted
+    loop
+>
+    <source src={videosrc} type="video/mp4" />
+Your browser does not support playing this video.
+</video>
