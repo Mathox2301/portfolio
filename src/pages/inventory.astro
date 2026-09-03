@@ -5,10 +5,13 @@ import VideoScript from "../layouts/VideoScript.astro";
 import Video from "../layouts/Video.astro";
 import Image from "../layouts/Image.astro";
 import Footer from "../layouts/Footer.astro";
-
+import "../assets/app.css";
+import Header from "../layouts/Header.astro";
 ---
 
 <html lang="en">
+    <Header title="Inventory System" />
+
     <body class="inventory bg-[#17212b] min-h-screen text-[#d5e1e8]">
         <PortfolioNav />
         <SectionTitle
@@ -80,14 +83,16 @@ import Footer from "../layouts/Footer.astro";
                 Ryan Laley. (2023). How to create an inventory system in Unreal
                 Engine 5. YouTube. Accessed on 3 January at <a
                     href="https://www.youtube.com/playlist?list=PL4G2bSPE_8umjCYXbq0v5IoV-Wi_WAxC3"
-                    >https://www.youtube.com/playlist?list=PL4G2bSPE_8umjCYXbq0v5IoV-Wi_WAxC3</a>
+                    >https://www.youtube.com/playlist?list=PL4G2bSPE_8umjCYXbq0v5IoV-Wi_WAxC3</a
+                >
             </p>
-            
+
             <p>
                 Patsanoob. (2023). Multi-slot inventory (Resident Evil) | UE5
                 tutorial. YouTube. Accessed on 3 January at <a
                     href="https://youtu.be/sFGl-WNpGZM?si=xGZBAzcBVjIfXNls"
-                    >https://youtu.be/sFGl-WNpGZM?si=xGZBAzcBVjIfXNls</a>
+                    >https://youtu.be/sFGl-WNpGZM?si=xGZBAzcBVjIfXNls</a
+                >
             </p>
             <h3>Assets</h3>
             <p>
@@ -187,8 +192,6 @@ import Footer from "../layouts/Footer.astro";
                 >
             </p>
         </main>
-        <Footer></Footer>
-    </body>
-    <VideoScript />
+        <Footer />
+    </body><VideoScript />
 </html>
-
